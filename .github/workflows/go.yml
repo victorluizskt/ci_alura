@@ -13,11 +13,12 @@ on:
 jobs:
 
   test:
+    # matrix strategy
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         go_version: ['1.19', '1.18', '>=1.19']
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, ubuntu-18.04]
         
     steps:
     - uses: actions/checkout@v3
@@ -39,7 +40,7 @@ jobs:
   build:
     # execute firts test, if no problem, excute build
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
     
