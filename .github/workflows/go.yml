@@ -15,7 +15,7 @@ jobs:
   test:
     # matrix strategy
     runs-on: ${{ matrix.os }}
-    env: 
+    env:
       HOST: localhost
       PORT: 5432
       USER: root
