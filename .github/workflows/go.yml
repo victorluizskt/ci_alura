@@ -5,9 +5,10 @@ name: Go
 
 on:
   push:
-    branches: [ "main" ]
+    # execute in all branchs an all pull requests
+    branches: [ "*" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "*" ]
 
 jobs:
 
